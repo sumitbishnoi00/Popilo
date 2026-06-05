@@ -1,0 +1,28 @@
+import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Popilo from './components/view/Popilo'
+import Topic from "./components/view/Topic";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+
+import './App.css'
+import Blog from "./components/popilo/Blog";
+function App() {
+  
+
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Popilo />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/topic/:cardName" element={<Topic />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
+  )
+}
+
+export default App
