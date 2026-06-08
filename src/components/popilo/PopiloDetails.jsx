@@ -10,9 +10,8 @@ const PopiloDetails = () => {
             cardName ===
             item.title
                 .toLocaleLowerCase()
-                .replaceAll(" ", "-")
-                .replaceAll(":", "")
-                .replaceAll(",", ""),
+                .replace(/[,:]/g, "")
+                .replace(/\s+/g, "-")
     );
 
     return (

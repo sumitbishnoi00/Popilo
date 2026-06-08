@@ -33,7 +33,7 @@ const Cards = () => {
                                 <Para para={item.paragraph} vari="sec" />
                                 <Heading heading={item.heading} vari="sec" />
                                 <Para para={item.content} vari="dan" />
-                                <button onClick={() => navigate(`/topic/${item.title .toLocaleLowerCase() .replaceAll(" ", "-") .replaceAll(":", "") .replaceAll(",", "")}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center">
+                                <button onClick={() => navigate(`/topic/${item.title .toLocaleLowerCase() .replace(/[,:]/g, "" ) .replace(/\s+/g, "-")}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center">
                                     {item.btn}
                                     <span>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
