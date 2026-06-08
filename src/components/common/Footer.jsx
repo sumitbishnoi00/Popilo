@@ -5,9 +5,9 @@ import { FOOTER_LINKS } from '../../utils/helper'
 const Footer = () => {
     return (
         <footer className='px-3 py-20 bg-white-smoke'>
-            <div className='max-w-285 w-full mx-auto flex flex-row items-center gap-42'>
+            <div className='max-w-285 w-full mx-auto flex flex-row max-[800px]:text-center max-[800px]:flex-wrap max-[800px]:justify-center md:gap-42 sm:gap-30 gap-15'>
                 <div className='max-w-84.5 flex flex-col'>
-                    <img src="/assets/pupilo.webp" className='w-47.5 h-13.25 mb-3' alt="pupilo" />
+                    <img src="/assets/pupilo.webp" className='w-47.5 h-13.25 mb-3' alt="pupilo" /> 
 
                     <Para para="Pupilo is Africa’s most loved online coding platform for kids and teens—where every child can code, create, and thrive." vari="fot" />
 
@@ -26,8 +26,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-row items-center gap-14'>
-                    <div className='grid grid-cols-2 gap-14'>
+                <div className='flex flex-row min-[813px]:items-center justify-center  gap-14 max-xl:flex-wrap'>
+                    <div className='grid min-[813px]:grid-cols-2 gap-14'>
                         {FOOTER_LINKS.map((section, index) => (
 
                             <div key={index} className='gap-3 flex flex-col'>

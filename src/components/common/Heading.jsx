@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heading = ({heading, vari}) => {
     const variants = {
-        pri: "max-w-125.25 w-full text-[48px]",
+        pri: "max-w-125.25 w-full md:text-[48px] sm:text-[40px] text-[36px]",
         sec: "w-full text-[24px]"
     }
   return (

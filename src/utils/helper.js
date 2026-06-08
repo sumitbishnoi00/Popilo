@@ -16,7 +16,7 @@ export const NAVBAR_LIST = [
         title: "Learn with Pupilo"
     },
     {
-        link: "#",
+        link: "/blog",
         title: "Blog"
     }
 ];
@@ -82,7 +82,7 @@ export const CARD_DATA = [
         note: "It's never too late to start. Consistency and practice are the keys to success."
     },
     {
-        image:"/assets/girl.webp",
+        image:"/assets/kids2.png",
         paragraph:"By John doe on 2 June 2025",
         title:"The Code Learning Blog: For Kids, Teens, and Adults",
         content:"Discover coding resources, tips, and stories designed for learners of every age. Whether you're a curious kid.",
@@ -102,7 +102,7 @@ export const CARD_DATA = [
 
     },
     {
-        image:"/assets/boy.webp",
+        image:"/assets/teens2.png",
         paragraph:"By John doe on 2 June 2025",
         title:"Learning to Code at Any Age",
         content:"Discover coding resources, tips, and stories designed for learners of every age. Whether you're a curious kid.",
@@ -121,7 +121,7 @@ export const CARD_DATA = [
         note: "Working on real projects helps teens gain practical experience and confidence."
     },
     {
-        image:"/assets/teachar.webp",
+        image:"/assets/Adults2.png",
         paragraph:"By John doe on 2 June 2025",
         title:"The Power of Learning at Every Stage",
         content:"Discover coding resources, tips, and stories designed for learners of every age. Whether you're a curious kid.",

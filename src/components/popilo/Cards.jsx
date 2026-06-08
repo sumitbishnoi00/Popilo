@@ -13,7 +13,7 @@ const Cards = () => {
     const path = tab === "less" ? "all" : "less";
     const filterArray = tab === "all" ? CARD_DATA : CARD_DATA.slice(0, 3);
     return (
-        <section className="px-4 py-20">
+        <section className="px-4 md:py-20 sm:py-14 py-8">
             <div className="max-w-285 mx-auto w-full">
                 <div className=" max-w-125.25 text-center flex flex-col justify-center  mx-auto">
                     <Heading heading="General Pupilo Topic" vari="pri" />
@@ -26,9 +26,9 @@ const Cards = () => {
                     {filterArray.map((item, index) => (
                         <div
                             key={index}
-                            className="shadow-[0px_0px_32px_0px_#0000000F] p-4 max-w-91 rounded-3xl"
+                            className="shadow-[0px_0px_32px_0px_#0000000F] p-4 w-full rounded-3xl"
                         >
-                            <img className="w-83 h-55 object-center object-cover rounded-xl mb-4" src={item.image} alt="" />
+                            <img className="w-full h-55 object-center object-cover rounded-xl mb-4" src={item.image} alt="" />
                             <div>
                                 <Para para={item.paragraph} vari="sec" />
                                 <Heading heading={item.heading} vari="sec" />
