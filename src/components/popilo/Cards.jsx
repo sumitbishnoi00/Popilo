@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { CARD_DATA } from '../../utils/helper'
 import Heading from '../common/Heading'
 import Para from '../common/Para'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const Cards = () => {
 
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const tab = searchParams.get("tab");
+    const [show, setShow] = useState("less");
+    const path = tab === "less" ? "all" : "less";
+    const filterArray = tab === "all" ? CARD_DATA : CARD_DATA.slice(0, 3);
     return (
-        <section className="px-4 py-40">
+        <section className="px-4 py-20">
             <div className="max-w-285 mx-auto w-full">
                 <div className=" max-w-125.25 text-center flex flex-col justify-center  mx-auto">
                     <Heading heading="General Pupilo Topic" vari="pri" />
@@ -18,7 +23,7 @@ const Cards = () => {
                     />
                 </div>
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-10 gap-6">
-                    {CARD_DATA.map((item, index) => (
+                    {filterArray.map((item, index) => (
                         <div
                             key={index}
                             className="shadow-[0px_0px_32px_0px_#0000000F] p-4 max-w-91 rounded-3xl"
@@ -28,7 +33,7 @@ const Cards = () => {
                                 <Para para={item.paragraph} vari="sec" />
                                 <Heading heading={item.heading} vari="sec" />
                                 <Para para={item.content} vari="dan" />
-                                <button onClick={() => navigate(`/topic/${item.title}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center">
+                                <button onClick={() => navigate(`/topic/${item.title .toLocaleLowerCase() .replaceAll(" ", "-") .replaceAll(":", "") .replaceAll(",", "")}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center">
                                     {item.btn}
                                     <span>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +47,8 @@ const Cards = () => {
                 </div>
 
                 <div className='flex items-center justify-center'>
-                    <button className='px-8 py-3.5 bg-yellow text-black font-semibold text-[16px] leading-[100%] border border-transparent rounded-[400px] flex flex-row items-center cursor-pointer mt-10 hover:shadow-2xs hover:shadow-black transition-all duration-500'>
-                        View All
+                    <button onClick={() => navigate(`?tab=${path}`)} className='px-8 py-3.5 bg-yellow text-black font-semibold text-[16px] leading-[100%] border border-transparent rounded-[400px] flex flex-row items-center cursor-pointer mt-10 hover:shadow-2xs hover:shadow-black transition-all duration-500'>
+                        {tab === "all" ? "Less More" : "Show More"}
                         <span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_3025_31)">

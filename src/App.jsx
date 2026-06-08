@@ -6,7 +6,6 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 
 import './App.css'
-import Blog from "./components/popilo/Blog";
 function App() {
   
 
@@ -16,7 +15,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Popilo />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/topic/:cardName" element={<Topic />} />
         </Routes>
         <Footer />
