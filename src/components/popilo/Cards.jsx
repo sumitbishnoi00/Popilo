@@ -8,7 +8,7 @@ const Cards = () => {
 
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const tab = searchParams.get("tab");
+    const tab = searchParams.get("tab") || "less";
     const [show, setShow] = useState("less");
     const path = tab === "less" ? "all" : "less";
     const filterArray = tab === "all" ? CARD_DATA : CARD_DATA.slice(0, 3);
