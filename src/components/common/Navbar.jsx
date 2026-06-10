@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { NAVBAR_LIST } from '../../utils/helper'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
 
     const [nav, setNav] = useState(false)
+    const path = useLocation().pathname
+    console.log(path)
+
 
     useEffect(() => {
 
@@ -19,7 +22,7 @@ const Navbar = () => {
                 <div className='nav flex items-center justify-center gap-12'>
                     <ul className={`flex items-center justify-center gap-8 lg:flex-row flex-col max-lg:fixed max-lg:top-0 max-lg:w-full max-lg:h-screen max-lg:bg-white max-lg:flex max-lg:items-center max-lg:justify-center transition-all duration-500 z-500 ${nav ? "max-lg:left-0" : "max-lg:-left-full"}`}>
                         {NAVBAR_LIST.map((item, index) => (
-                            <Link to={item.link} key={index} onClick={() => setNav(false)}><li className='font-normal text-[16px] leading-[150%] text-granite-gray hover:text-black hover:font-semibold transition-all duration-500'>{item.title}</li></Link>
+                            <Link to={item.link} key={index} onClick={() => setNav(false)}><li className={`font-normal links text-[16px] leading-[150%] text-granite-gray hover:text-black transition-all duration-500 ${item.link === path && "active"}`}>{item.title}</li></Link>
                         ))}
 
                     </ul>

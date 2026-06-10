@@ -1,6 +1,6 @@
 export const NAVBAR_LIST = [
     {
-        link: "#",
+        link: "/",
         title: "Home"
     },
     {

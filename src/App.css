@@ -4,3 +4,11 @@
       font-family: "Poppins", sans-serif;
 
 }
+
+.links:hover {
+      -webkit-text-stroke: 1px black;
+}
+
+.links.active {
+      -webkit-text-stroke: 1px red;
+}
