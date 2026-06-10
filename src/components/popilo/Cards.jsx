@@ -3,6 +3,7 @@ import { CARD_DATA } from '../../utils/helper'
 import Heading from '../common/Heading'
 import Para from '../common/Para'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import Icons from '../common/Icons'
 
 const Cards = () => {
 
@@ -33,12 +34,10 @@ const Cards = () => {
                                 <Para para={item.paragraph} vari="sec" />
                                 <Heading heading={item.heading} vari="sec" />
                                 <Para para={item.content} vari="dan" />
-                                <button onClick={() => navigate(`/topic/${item.title .toLocaleLowerCase() .replace(/[,:]/g, "" ) .replace(/\s+/g, "-")}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center">
+                                <button onClick={() => navigate(`/topic/${item.title .toLocaleLowerCase() .replace(/[,:]/g, "" ) .replace(/\s+/g, "-")}`)} className="font-semibold cursor-pointer text-[16px] leading-[100%] mt-4 underline flex flex-row items-center group">
                                     {item.btn}
                                     <span>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10 8L14 12L10 16" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                        <Icons icon={"arrow"} className={"group-hover:translate-x-10 transition-all duration-500"} pathName={"group-hover:stroke-green-500"} />
                                     </span>
                                 </button>
                             </div>
@@ -47,20 +46,10 @@ const Cards = () => {
                 </div>
 
                 <div className='flex items-center justify-center'>
-                    <button onClick={() => navigate(`?tab=${path}`)} className='px-8 py-3.5 bg-yellow text-black font-semibold text-[16px] leading-[100%] border border-transparent rounded-[400px] flex flex-row items-center cursor-pointer mt-10 hover:shadow-2xs hover:shadow-black transition-all duration-500'>
+                    <button onClick={() => navigate(`?tab=${path}`)} className='px-8 py-3.5 bg-yellow text-black font-semibold text-[16px] group leading-[100%] border border-transparent rounded-[400px] flex flex-row items-center cursor-pointer mt-10 hover:shadow-2xs hover:shadow-black transition-all duration-500'>
                         {tab === "all" ? "Less More" : "Show More"}
                         <span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_3025_31)">
-                                    <path d="M16.0044 9.414L7.3974 18.021L5.9834 16.607L14.5894 8H7.0044V6H18.0044V17H16.0044V9.414Z" fill="#010101" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_3025_31">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
+                            <Icons icon={"arrowUpRight"} className={"group-hover:-translate-y-1.5 group-hover:translate-x-3 transition-all duration-500"} pathName={"group-hover:stroke-green-500"} />
                         </span>
                     </button>
                 </div>
